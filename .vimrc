@@ -1,4 +1,4 @@
- execute pathogen#infect()
+execute pathogen#infect()
 syntax on
 filetype plugin indent on
 set tabstop=2     " (ts) width (in spaces) that a <tab> is displayed as
@@ -10,5 +10,10 @@ noremap <F4> :r !pbpaste
 set background=dark
 colorscheme hybrid_material
 let mapleader = ","
-nnoremap <leader>sv :so $MYVIMRC<cr>
-nnoremap <leader>ev :vs $MYVIMRC<cr>
+nmap <leader>ne :NERDTree<cr>
+nmap <leader>r :resize +10<cr>
+nmap <leader>er :vertical resize +10<cr>
+set ruler
+" to check indentation <leader>ig
+nmap <leader>spe :setlocal spell spelllang=en_us<cr>
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
