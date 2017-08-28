@@ -1,4 +1,4 @@
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch)\[\033[00m\] $ "
 export CLICOLOR=1
 export LSCOLORS=HxHxHxHxHxegedabagacad
 alias ls='ls -Gh'
@@ -40,4 +40,21 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
 ##############################################################################################
 
-alias cur='cd ~/Desktop/8thlight/tic_tac_toe'
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+parse_git_branch() {
+       git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+     }
+alias cur="cd ~/Desktop/resident_apprenticeship/challenges"
+alias blog="cd ~/Desktop/resident_apprenticeship/avni510.github.io"
+alias tsr="cd ~/Desktop/tsr-arb"
+alias postgre="postgres -D /usr/local/var/postgres"
+export PATH=/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/avnikothari/.rbenv/shims:/Users/avnikothari/.rbenv/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:~/clojure_lein:/usr/local/Cellar/node/8.1.2/bin
+
+alias tmux="TERM=screen-256color-bce tmux"

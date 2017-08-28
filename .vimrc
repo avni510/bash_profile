@@ -1,3 +1,5 @@
+call plug#begin('~/.vim/plugged')
+Plug 'elmcast/elm-vim'
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -17,3 +19,7 @@ set ruler
 " to check indentation <leader>ig
 nmap <leader>spe :setlocal spell spelllang=en_us<cr>
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+set nowrap
+set hlsearch
+let g:elm_format_autosave = 1
+call plug#end()
