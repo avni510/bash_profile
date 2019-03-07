@@ -1,5 +1,3 @@
-call plug#begin('~/.vim/plugged')
-Plug 'elmcast/elm-vim'
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -12,7 +10,7 @@ noremap <F4> :r !pbpaste
 set background=dark
 colorscheme hybrid_material
 let mapleader = ","
-nmap <leader>ne :NERDTree<cr>
+nmap <silent> <leader>ne :NERDTreeFind<cr>
 nmap <leader>r :resize +10<cr>
 nmap <leader>er :vertical resize +10<cr>
 set ruler
@@ -22,4 +20,6 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 set nowrap
 set hlsearch
 let g:elm_format_autosave = 1
-call plug#end()
+set t_Co=256
+let g:tsuquyomi_completion_detail=1
+let g:tsuquyomi_single_quote_import=1

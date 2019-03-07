@@ -1,6 +1,7 @@
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch)\[\033[00m\] $ "
 export CLICOLOR=1
 export LSCOLORS=HxHxHxHxHxegedabagacad
+export EDITOR='vim'
 alias ls='ls -Gh'
 # Setting PATH for Python 3.5
 # The orginal version is saved in .bash_profile.pysave
@@ -48,13 +49,23 @@ eval "$(rbenv init -)"
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 export PATH
 
+PATH="/usr/local/bin/npm:${PATH}"
+export PATH
+
 parse_git_branch() {
        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
      }
-alias cur="cd ~/Desktop/resident_apprenticeship/challenges"
-alias blog="cd ~/Desktop/resident_apprenticeship/avni510.github.io"
-alias tsr="cd ~/Desktop/tsr-arb"
-alias postgre="postgres -D /usr/local/var/postgres"
+alias dbstart="postgres -D /usr/local/var/postgres"
+alias server="cd ~/Desktop/client_projects/ideo/wilson-server"
+alias ops="cd ~/Desktop/client_projects/ideo/wilson-ops"
+alias mobile="cd ~/Desktop/client_projects/ideo/wilson-mobile"
+alias coaches="cd ~/Desktop/client_projects/ideo/wilson-coaches"
 export PATH=/Library/Frameworks/Python.framework/Versions/3.6/bin:/Users/avnikothari/.rbenv/shims:/Users/avnikothari/.rbenv/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:~/clojure_lein:/usr/local/Cellar/node/8.1.2/bin
 
 alias tmux="TERM=screen-256color-bce tmux"
+alias mux=tmuxinator
+eval "$(rbenv init -)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/avnikothari/.sdkman"
+[[ -s "/Users/avnikothari/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/avnikothari/.sdkman/bin/sdkman-init.sh"

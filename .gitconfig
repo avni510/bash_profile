@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Avni Kothari
-  email = avnikothari@Avnis-MacBook-Air.local
+  email = avni@8thlight.com
 [alias]
 co = checkout
 ci = commit
@@ -12,3 +12,8 @@ br = branch
 
 
 
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
